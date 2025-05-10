@@ -14,8 +14,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $pendingTasks = Task::where('status', 'pending')->get();
-        $completedTasks = Task::where('status', 'completed')->get();
+        $pendingTasks = Task::where('status', 'pending')->orderBy('created_at', 'desc')->get();
+        $completedTasks = Task::where('status', 'completed')->orderBy('created_at', 'desc')->get();
         
         return response()->json([
             'pendingTasks' => $pendingTasks,
@@ -50,7 +50,13 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        //
+        $task = Task::find($id);
+    
+        if (!$task) {
+            return response()->json(['error' => 'Task not found'], 404);
+        }
+        
+        return response()->json($task);
     }
 
     /**
@@ -70,7 +76,7 @@ class TaskController extends Controller
 
         $task->update($validated);
         
-        return response()->json($task);
+        return response()->json($task, 200);
     }
 
     /**
