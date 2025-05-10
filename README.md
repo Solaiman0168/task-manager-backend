@@ -16,7 +16,7 @@
 
 1. Setup Laravel Project
 
-composer create-project laravel/laravel task-manager-backend <br>
+composer create-project laravel/laravel task-manager-backend <br> <br>
 cd task-manager-backend
 
 2. Create Task Model and Migration
