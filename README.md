@@ -37,6 +37,8 @@ Update the controller part with index show store update delete
 
 4. Add API Routes
 
-Finally, I ran my project 
+5. Then I ran the php artisan serve command and I get server url http://127.0.0.1:8000/ 
+
+Finally, I hit the url to my browser and get user interface 
 
 
