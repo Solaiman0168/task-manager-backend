@@ -34,6 +34,8 @@ php artisan make:controller TaskController --api
 
 Update the controller part with index show store update delete
 
+added Form validation 
+
 4. Add API Routes
 
 5. Then I ran the php artisan serve command and I get server url http://127.0.0.1:8000/ 
